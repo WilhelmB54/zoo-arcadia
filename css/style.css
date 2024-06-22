@@ -59,6 +59,11 @@ nav ul li a:hover {
   color: white; /* Couleur blanche au survol */
 }
 
+.nav-item.active {
+  font-weight: bold; /* Lien actif en gras */
+  text-decoration: underline; /* Lien actif souligné */
+}
+
 /* Styles pour le contenu de la bannière */
 .banner-content {
   max-width: 90%;
@@ -82,6 +87,26 @@ nav ul li a:hover {
 .banner-content p {
   font-size: 1.5rem;
   margin-top: 1rem;
+}
+
+/* Styles pour le lien du titre dans l'en-tête */
+header h1 a {
+  color: #ffeb3b; /* Couleur jaune pour le lien du titre */
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  text-decoration: underline;
+}
+
+/* Styles pour les liens des titres de section h2 */
+section h2 a {
+  color: #ffeb3b; /* Couleur jaune pour les liens des titres de section */
+  text-decoration: none;
+}
+
+section h2 a:hover {
+  text-decoration: underline;
 }
 
 /* Styles pour les sections */
