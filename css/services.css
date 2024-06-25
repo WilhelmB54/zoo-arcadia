@@ -1,0 +1,92 @@
+body {
+  text-align: center;
+}
+
+/* Styles pour la section Services */
+#services {
+  padding: 2rem;
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+#services h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #ffeb3b; /* Titres en jaune */
+}
+
+/* Styles pour chaque carte de service */
+.service-item {
+  margin-bottom: 30px; /* Espacement entre chaque carte */
+  margin: 0 auto; /* Centre les cartes horizontalement */
+  max-width: 800px; /* Ajustez la largeur maximale selon votre besoin */
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  padding: 20px; /* Espacement interne pour augmenter l'espacement global */
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px; /* Espacement après chaque titre */
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 15px; /* Espacement après chaque description */
+}
+
+.carousel {
+  margin-top: 15px; /* Espacement avant chaque carousel */
+  margin-bottom: 15px; /* Espacement après chaque carousel */
+  text-align: center;
+}
+
+.carousel img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  display: block; /* Assure que les images sont alignées au centre */
+  margin: 0 auto; /* Centre les images horizontalement */
+}
+
+/* Styles pour les listes */
+ul {
+  list-style-type: none; /* Supprime les puces */
+  padding-left: 0; /* Supprime le padding par défaut des listes */
+  text-align: center; /* Centre le texte des listes */
+}
+
+ul li {
+  display: inline-block; /* Affiche les éléments de liste en ligne */
+  margin-right: 10px; /* Espacement entre les éléments de liste */
+}
+
+/* Styles pour les listes imbriquées */
+ul ul {
+  text-align: left; /* Alignement du texte à gauche pour les listes imbriquées */
+}
+
+ul ul li {
+  display: block; /* Affiche les éléments de liste imbriquée en bloc */
+  margin-right: 0; /* Supprime l'espacement entre les éléments de liste imbriquée */
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    width: 100%;
+    padding: 10px; /* Ajustement du padding pour les petits écrans */
+  }
+}

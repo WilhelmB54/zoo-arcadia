@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page services - Zoo Arcadia</title>
-    <!-- Lien vers le fichier CSS externe -->
+    <title>Services - Zoo Arcadia</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/services.css" />
+    <!-- Inclure Slick Carousel CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
   </head>
-
   <body>
     <!-- En-tête de la page avec la barre de navigation -->
     <header class="banner-header">
@@ -28,14 +36,168 @@
       </div>
     </header>
 
+    <!-- Section des services -->
+    <section id="services">
+      <div class="container">
+        <h2>Nos Services</h2>
+
+        <!-- Cartes pour chaque service -->
+        <div class="service-item">
+          <div class="card">
+            <h3 class="service-title">Restauration</h3>
+            <div class="card-body">
+              <p class="service-description">
+                Profitez d'une expérience culinaire variée et de qualité lors de
+                votre visite au Zoo Arcadia. Nos restaurants et kiosques
+                dispersés à travers le parc vous offrent une sélection
+                alléchante de plats savoureux, des options pour tous les goûts,
+                des snacks rafraîchissants aux repas complets. Détendez-vous et
+                rechargez vos batteries tout en savourant la vue sur nos
+                magnifiques installations et en observant nos animaux dans un
+                cadre naturel unique.
+              </p>
+              <div class="carousel">
+                <div>
+                  <img
+                    src="images/services/restauration1.jpg"
+                    alt="Restauration 1"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="images/services/restauration2.jpg"
+                    alt="Restauration 2"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="images/services/restauration3.jpg"
+                    alt="Restauration 3"
+                  />
+                </div>
+              </div>
+              <p class="menu-details">
+                Nos menus de restauration rapide comprennent une variété d'options pour tous les goûts :
+                <ul>
+                  <li>Menu Burger : 8€ - Comprend un burger, des frites et une boisson.</li>
+                  <li>Menu Sandwich : 7€ - Comprend un sandwich, des chips et une boisson.</li>
+                  <li>Options végétariennes et véganes disponibles à partir de 7€.</li>
+                  <li>Snacks et boissons à partir de 2€.</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <div class="card">
+            <h3 class="service-title">
+              Visite des habitats avec un guide <br />
+              (gratuit)
+            </h3>
+            <div class="card-body">
+              <p class="service-description">
+                Explorez nos habitats fascinants accompagné par nos guides
+                experts, et plongez-vous dans des environnements riches et
+                diversifiés. De la savane africaine à la jungle exotique, en
+                passant par les marais mystérieux, chaque visite est une
+                occasion d'apprendre sur la faune et la flore locales. Nos
+                guides vous offriront des informations enrichissantes sur nos
+                espèces, leurs habitats et les efforts de conservation que nous
+                entreprenons pour préserver ces écosystèmes précieux.
+              </p>
+              <div class="carousel">
+                <div>
+                  <img
+                    src="images/services/habitat1.jpg"
+                    alt="Visite des Habitats 1"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="images/services/habitat2.jpg"
+                    alt="Visite des Habitats 2"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="images/services/habitat3.jpg"
+                    alt="Visite des Habitats 3"
+                  />
+                </div>
+              </div>
+              <p class="guide-details">
+                Horaires des visites guidées :
+                <ul>
+                  <li>Savane africaine : 10h00, 14h00, 16h00</li><br>
+                  <li>Jungle luxuriante : 11h00, 15h00, 17h00</li><br>
+                  <li>Marais mystérieux : 12h00, 13h00, 16h30</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-item">
+          <div class="card">
+            <h3 class="service-title">Visite du zoo en petit train</h3>
+            <div class="card-body">
+              <p class="service-description">
+                Embarquez à bord de notre petit train pour une aventure
+                panoramique à travers le Zoo Arcadia. Profitez d'une vue
+                imprenable sur nos vastes installations et nos habitats
+                diversifiés, tout en apprenant sur nos efforts de préservation
+                et de conservation. Ce voyage relaxant est idéal pour les
+                visiteurs de tous âges, offrant une perspective unique sur nos
+                animaux et leurs environnements naturels.
+              </p>
+              <div class="carousel">
+                <div>
+                  <img
+                    src="images/services/petit-train1.jpg"
+                    alt="Petit Train 1"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="images/services/petit-train2.jpg"
+                    alt="Petit Train 2"
+                  />
+                </div>
+                <div>
+                  <img
+                    src="images/services/petit-train3.jpg"
+                    alt="Petit Train 3"
+                  />
+                </div>
+              </div>
+              <p class="train-details">
+                Horaires des visites en petit train :
+                <ul>
+                  <li>Départ 1 : 10h30</li><br>
+                  <li>Départ 2 : 13h30</li><br>
+                  <li>Départ 3 : 16h00</li>
+                </ul>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /.container -->
+    </section>
+
     <!-- Pied de page -->
     <footer>
       <p class="horaires">
-        Horaires d'ouverture :
-        <br />
+        Horaires d'ouverture :<br />
         Lundi - Vendredi : 9h00 - 17h00 | Samedi - Dimanche : 10h00 - 18h00
       </p>
       <p class="copyright">&copy; 2024 Zoo Arcadia. Tous droits réservés.</p>
     </footer>
+
+    <!-- Bootstrap JS et dépendances -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/services.js"></script>
   </body>
 </html>
