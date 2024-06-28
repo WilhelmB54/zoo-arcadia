@@ -32,6 +32,12 @@ body {
   padding: 20px; /* Espacement interne pour augmenter l'espacement global */
 }
 
+.card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #4caf50; /* Noms des animaux et services en vert */
+}
+
 .card:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -44,7 +50,7 @@ body {
 
 .service-description {
   font-size: 1rem;
-  color: #666;
+  color: black;
   margin-bottom: 15px; /* Espacement après chaque description */
 }
 
