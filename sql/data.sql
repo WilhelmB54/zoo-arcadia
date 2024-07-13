@@ -52,6 +52,12 @@ INSERT INTO race (label) VALUES
 ('Panda'),
 ('Crocodile');
 
+-- Insérer les avis
+INSERT INTO avis (pseudo, commentaire, isVisible) VALUES 
+('Zoé123', 'Excellent zoo, j''ai adoré la diversité des animaux et l''ambiance paisible.', true);
+('FamilleMartin', 'Un endroit formidable pour une journée en famille, les enfants étaient ravis !', true);
+('NatureLover99', 'Les habitats sont bien conçus, on se sent vraiment immergé dans la nature.', true);
+
 -- Insérer les relations animaux et races
 INSERT INTO dispose (animal_id, race_id) VALUES
 (1, 1), -- Leo est un Lion

@@ -1,3 +1,5 @@
+<?php ?>
+
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -14,7 +16,7 @@
     <header class="banner-header">
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html" class="nav-item active">Accueil</a></li>
+          <li><a href="index.php" class="nav-item active">Accueil</a></li>
           <li><a href="services.html" class="nav-item">Services</a></li>
           <li><a href="habitats.html" class="nav-item">Habitats</a></li>
           <li><a href="connexion.html" class="nav-item">Connexion</a></li>
@@ -22,7 +24,7 @@
         </ul>
       </nav>
       <div class="banner-content">
-        <h1><a href="index.html">Bienvenue au Zoo Arcadia</a></h1>
+        <h1><a href="index.php">Bienvenue au Zoo Arcadia</a></h1>
         <p>
           Explorez notre zoo, découvrez nos habitats et nos merveilleux animaux.
         </p>
@@ -129,36 +131,11 @@
     </section>
 
     <!-- Section des avis -->
-    <section id="avis">
-      <h2>Avis du Zoo</h2>
-      <div class="grid-container">
-        <div class="avis">
-          <p>
-            Excellent zoo, j'ai adoré la diversité des animaux et l'ambiance
-            paisible.
-          </p>
-          <p class="auteur">- Zoé123</p>
-        </div>
-        <div class="avis">
-          <p>
-            Un endroit formidable pour une journée en famille, les enfants
-            étaient ravis !
-          </p>
-          <p class="auteur">- FamilleMartin</p>
-        </div>
-        <div class="avis">
-          <p>
-            Les habitats sont bien conçus, on se sent vraiment immergé dans la
-            nature.
-          </p>
-          <p class="auteur">- NatureLover99</p>
-        </div>
-      </div>
-    </section>
+    <?php include 'avis/afficher_avis.php'; ?>
 
     <section id="laissez-un-avis">
       <h2>Laissez un avis</h2>
-      <form id="avisForm" action="submit_avis.php" method="POST">
+      <form id="avisForm" action="avis/submit_avis.php" method="POST">
         <div class="form-group">
           <label for="pseudo">Pseudo :</label>
           <input type="text" id="pseudo" name="pseudo" required />
