@@ -6,8 +6,13 @@
     <title>Page connexion - Zoo Arcadia</title>
     <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/connexion.css" />
+    <!-- Ajout d'un lien pour les icônes -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
-
   <body>
     <!-- En-tête de la page avec la barre de navigation -->
     <header class="banner-header">
@@ -29,6 +34,19 @@
         </p>
       </div>
     </header>
+
+    <div class="container">
+      <h2>Connexion</h2>
+      <form action="login.php" method="post">
+        <label for="username">Courriel (Username) :</label>
+        <input type="email" id="username" name="username" required />
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required />
+
+        <input type="submit" value="Se connecter" />
+      </form>
+    </div>
 
     <!-- Pied de page -->
     <footer>
