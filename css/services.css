@@ -1,7 +1,3 @@
-body {
-  text-align: center;
-}
-
 /* Styles pour la section Services */
 #services {
   padding: 2rem;
@@ -19,7 +15,7 @@ body {
 
 /* Styles pour chaque carte de service */
 .service-item {
-  margin-bottom: 30px; /* Espacement entre chaque carte */
+  padding: 30px;
   margin: 0 auto; /* Centre les cartes horizontalement */
   max-width: 800px; /* Ajustez la largeur maximale selon votre besoin */
 }
@@ -52,42 +48,6 @@ body {
   font-size: 1rem;
   color: black;
   margin-bottom: 15px; /* Espacement après chaque description */
-}
-
-.carousel {
-  margin-top: 15px; /* Espacement avant chaque carousel */
-  margin-bottom: 15px; /* Espacement après chaque carousel */
-  text-align: center;
-}
-
-.carousel img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-  display: block; /* Assure que les images sont alignées au centre */
-  margin: 0 auto; /* Centre les images horizontalement */
-}
-
-/* Styles pour les listes */
-ul {
-  list-style-type: none; /* Supprime les puces */
-  padding-left: 0; /* Supprime le padding par défaut des listes */
-  text-align: center; /* Centre le texte des listes */
-}
-
-ul li {
-  display: inline-block; /* Affiche les éléments de liste en ligne */
-  margin-right: 10px; /* Espacement entre les éléments de liste */
-}
-
-/* Styles pour les listes imbriquées */
-ul ul {
-  text-align: left; /* Alignement du texte à gauche pour les listes imbriquées */
-}
-
-ul ul li {
-  display: block; /* Affiche les éléments de liste imbriquée en bloc */
-  margin-right: 0; /* Supprime l'espacement entre les éléments de liste imbriquée */
 }
 
 @media (max-width: 768px) {

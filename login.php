@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     header("Location: dashboards/veterinaire_dashboard.php");
                     break;
                 case 'employe':
-                    header("Location: dashboards/employe_dashboard.php");
+                    header("Location: employe/employe_dashboard.php");
                     break;
                 default:
                     echo "Rôle utilisateur non reconnu.";

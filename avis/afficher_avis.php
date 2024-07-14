@@ -1,6 +1,6 @@
 <?php
 // Inclure le fichier de connexion à la base de données
-require_once('connexion.php');
+require_once 'connexion_bdd.php';
 
 try {
     // Préparer la requête SQL pour récupérer les avis

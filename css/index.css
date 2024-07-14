@@ -83,20 +83,20 @@ section h2 {
   color: black;
 }
 
+/* Règle spécifique pour les liens dans les titres <h2> de la section #services */
+#services h2 a {
+  color: #ffeb3b; /* Couleur jaune pour les liens dans les titres de la section #services */
+}
+
 /* Style par défaut pour les liens des services */
 #services a {
-  color: green; /* Couleur verte par défaut */
+  color: #4caf50; /* Couleur verte par défaut */
   text-decoration: none; /* Pas de soulignement par défaut */
 }
 
 /* Effet de soulignement au survol */
 #services a:hover {
   text-decoration: underline; /* Soulignement au survol */
-}
-
-/* Style pour les liens visités */
-#services a:visited {
-  color: green; /* Garder la couleur verte pour les liens visités */
 }
 
 /* Styles pour les cartes (animaux et activités) */

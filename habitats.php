@@ -15,8 +15,8 @@
       <nav>
         <ul class="nav-links">
           <li><a href="index.php" class="nav-item">Accueil</a></li>
-          <li><a href="services.html" class="nav-item">Services</a></li>
-          <li><a href="habitats.html" class="nav-item active">Habitats</a></li>
+          <li><a href="services.php" class="nav-item">Services</a></li>
+          <li><a href="habitats.php" class="nav-item active">Habitats</a></li>
           <li><a href="connexion.html" class="nav-item">Connexion</a></li>
           <li><a href="contact.html" class="nav-item">Contact</a></li>
         </ul>

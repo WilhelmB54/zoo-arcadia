@@ -18,9 +18,9 @@ INSERT INTO possede (username, role_id) VALUES
 
 -- Insérer les services
 INSERT INTO service (nom, description) VALUES
-('Restauration', 'Profitez d''une expérience culinaire variée et de qualité lors de votre visite au Zoo Arcadia.'),
-('Visite des habitats avec un guide', 'Explorez nos habitats fascinants accompagné par nos guides experts.'),
-('Visite du zoo en petit train', 'Embarquez à bord de notre petit train pour une aventure panoramique à travers le Zoo Arcadia.');
+('Restauration', 'Profitez d''une expérience culinaire variée et de qualité lors de votre visite au Zoo Arcadia. Nos restaurants et kiosques dispersés à travers le parc vous offrent une sélection alléchante de plats savoureux, des options pour tous les goûts, des snacks rafraîchissants aux repas complets. Détendez-vous et rechargez vos batteries tout en savourant la vue sur nos magnifiques installations et en observant nos animaux dans un cadre naturel unique.'),
+('Visite des habitats avec un guide (gratuit)', 'Explorez nos habitats fascinants accompagné par nos guides experts, et plongez-vous dans des environnements riches et diversifiés. De la savane africaine à la jungle luxuriante, en passant par les marais mystérieux, chaque visite est une occasion d''apprendre sur la faune et la flore locales. Nos guides vous offriront des informations enrichissantes sur nos espèces, leurs habitats et les efforts de conservation que nous entreprenons pour préserver ces écosystèmes précieux.'),
+('Visite du zoo en petit train', 'Embarquez à bord de notre petit train pour une aventure panoramique à travers le Zoo Arcadia. Profitez d''une vue imprenable sur nos vastes installations et nos habitats diversifiés, tout en apprenant sur nos efforts de préservation et de conservation. Ce voyage relaxant est idéal pour les visiteurs de tous âges, offrant une perspective unique sur nos animaux et leurs environnements naturels.');
 
 -- Insérer les habitats
 INSERT INTO habitat (nom, description, commentaire_habitat) VALUES
@@ -54,8 +54,8 @@ INSERT INTO race (label) VALUES
 
 -- Insérer les avis
 INSERT INTO avis (pseudo, commentaire, isVisible) VALUES 
-('Zoé123', 'Excellent zoo, j''ai adoré la diversité des animaux et l''ambiance paisible.', true);
-('FamilleMartin', 'Un endroit formidable pour une journée en famille, les enfants étaient ravis !', true);
+('Zoé123', 'Excellent zoo, j''ai adoré la diversité des animaux et l''ambiance paisible.', true),
+('FamilleMartin', 'Un endroit formidable pour une journée en famille, les enfants étaient ravis !', true),
 ('NatureLover99', 'Les habitats sont bien conçus, on se sent vraiment immergé dans la nature.', true);
 
 -- Insérer les relations animaux et races
@@ -81,3 +81,23 @@ INSERT INTO detient (habitat_id, animal_id) VALUES
 (2, 3), -- Paco dans la Jungle
 (2, 4), -- Bamboo dans la Jungle
 (3, 5); -- Croco dans le Marais
+
+INSERT INTO nourriture (label) VALUES
+('Viande'),
+('Fruits'),
+('Poisson'),
+('Feuilles de bambou'),
+('Insectes');
+
+INSERT INTO consommation (animal_id, nourriture_id, date, heure, quantite) VALUES
+(1, 1, '2024-07-10', '08:00:00', 5.5), -- Leo mange 5.5 kg de viande
+(2, 1, '2024-07-10', '09:00:00', 4.0), -- Tigrou mange 4 kg de viande
+(3, 2, '2024-07-10', '10:00:00', 1.5), -- Paco mange 1.5 kg de fruits
+(4, 4, '2024-07-10', '11:00:00', 3.0), -- Bamboo mange 3 kg de feuilles de bambou
+(5, 3, '2024-07-10', '12:00:00', 2.5), -- Croco mange 2.5 kg de poisson
+
+(1, 1, '2024-07-11', '08:00:00', 6.0), -- Leo mange 6 kg de viande
+(2, 1, '2024-07-11', '09:00:00', 4.2), -- Tigrou mange 4.2 kg de viande
+(3, 2, '2024-07-11', '10:00:00', 1.8), -- Paco mange 1.8 kg de fruits
+(4, 4, '2024-07-11', '11:00:00', 3.2), -- Bamboo mange 3.2 kg de feuilles de bambou
+(5, 3, '2024-07-11', '12:00:00', 2.7); -- Croco mange 2.7 kg de poisson

@@ -100,3 +100,19 @@ CREATE TABLE comporte (
     FOREIGN KEY (habitat_id) REFERENCES habitat(habitat_id),
     FOREIGN KEY (image_id) REFERENCES image(image_id)
 );
+
+CREATE TABLE nourriture (
+    nourriture_id SERIAL PRIMARY KEY,
+    label VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE consommation (
+    consommation_id SERIAL PRIMARY KEY,
+    animal_id INT,
+    nourriture_id INT,
+    date DATE NOT NULL,
+    heure TIME NOT NULL,
+    quantite DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (animal_id) REFERENCES animal(animal_id),
+    FOREIGN KEY (nourriture_id) REFERENCES nourriture(nourriture_id)
+);
