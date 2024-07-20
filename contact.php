@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page habitats - Zoo Arcadia</title>
+    <title>Page contact - Zoo Arcadia</title>
     <!-- Lien vers le fichier CSS externe -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/habitats.css" />
   </head>
 
   <body>
@@ -14,11 +13,11 @@
     <header class="banner-header">
       <nav>
         <ul class="nav-links">
-          <li><a href="index.php" class="nav-item">Accueil</a></li>
+          <li><a href="index.php" class="nav-item active">Accueil</a></li>
           <li><a href="services.php" class="nav-item">Services</a></li>
-          <li><a href="habitats.php" class="nav-item active">Habitats</a></li>
+          <li><a href="habitats.php" class="nav-item">Habitats</a></li>
           <li><a href="connexion.php" class="nav-item">Connexion</a></li>
-          <li><a href="contact.php" class="nav-item">Contact</a></li>
+          <li><a href="contact.php" class="nav-item active">Contact</a></li>
         </ul>
       </nav>
       <div class="banner-content">
@@ -28,19 +27,6 @@
         </p>
       </div>
     </header>
-
-    <main>
-      <section id="habitats">
-        <h2>Nos Habitats</h2>
-        <div id="habitatsContainer" class="habitats-container">
-          <!-- Les cartes des habitats seront ajoutées ici dynamiquement -->
-        </div>
-      </section>
-
-      <section id="habitatDetails" class="hidden">
-        <!-- Les détails de l'habitat sélectionné et les informations sur les animaux seront affichés ici -->
-      </section>
-    </main>
 
     <!-- Pied de page -->
     <footer>
@@ -74,6 +60,5 @@
     </p>
     <p class="copyright">&copy; <?php echo date('Y'); ?> Zoo Arcadia. Tous droits réservés.</p>
     </footer>
-    <script src="js/habitats.js"></script>
   </body>
 </html>

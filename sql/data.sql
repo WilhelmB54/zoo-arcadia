@@ -1,6 +1,6 @@
 -- Insérer les utilisateurs avec des mots de passe hashés
 INSERT INTO utilisateur (username, password, nom, prenom) VALUES
-('admin@zooarcadia.com', '$2y$10$vm9qXe5/NjQ5KiU7BZbjc.dEW05zSWz.nzqXHycrAULmvztqwRksW', 'Martin', 'Alexandre'),
+('josedubois842@gmail.com', '$2y$10$vm9qXe5/NjQ5KiU7BZbjc.dEW05zSWz.nzqXHycrAULmvztqwRksW', 'Dubois', 'José'),
 ('veterinaire@zooarcadia.com', '$2y$10$xDTJa6dgGIPknagkdzHi.OmKEfQYqg6ZUneDJXYMavExMOqvuoNXK', 'Dubois', 'Sophie'),
 ('employe@zooarcadia.com', '$2y$10$8hfV4YcR0QogNJBFzh6UrOOcrLLL5JKNVYaqI3ljPOo9GR4/RzCt2', 'Dupont', 'Jean');
 
@@ -12,7 +12,7 @@ INSERT INTO role (label) VALUES
 
 -- Insérer les relations utilisateurs et rôles
 INSERT INTO possede (username, role_id) VALUES
-('admin@zooarcadia.com', 1),
+('josedubois842@gmail.com', 1),
 ('veterinaire@zooarcadia.com', 2),
 ('employe@zooarcadia.com', 3);
 
@@ -25,7 +25,7 @@ INSERT INTO service (nom, description) VALUES
 -- Insérer les habitats
 INSERT INTO habitat (nom, description, commentaire_habitat) VALUES
 ('Savane', 'La savane du Zoo Arcadia représente un écosystème vaste et diversifié.', 'L''habitat de la savane semble bien adapté aux besoins de nos animaux africains. Cependant, je recommande de vérifier régulièrement l''état des points d''eau pour assurer un approvisionnement adéquat pendant les périodes sèches.'),
-('Jungle', 'Notre jungle est un éden tropical où la biodiversité foisonne parmi les frondaisons luxuriantes et les murmures des cours d''eau.', ' La végétation dense de la jungle offre un bon abri naturel pour nos animaux tropicaux. Pour améliorer leur bien-être, je propose d''enrichir les zones d''escalade et d''introduire plus d''éléments naturels pour encourager l''exploration et l''activité physique.'),
+('Jungle', 'Notre jungle est un éden tropical où la biodiversité foisonne parmi les frondaisons luxuriantes et les murmures des cours d''eau.', 'La végétation dense de la jungle offre un bon abri naturel pour nos animaux tropicaux. Pour améliorer leur bien-être, je propose d''enrichir les zones d''escalade et d''introduire plus d''éléments naturels pour encourager l''exploration et l''activité physique.'),
 ('Marais', 'Le marais du Zoo Arcadia est un refuge tranquille pour une diversité remarquable d''animaux aquatiques.', 'Le marais offre un habitat diversifié pour nos espèces aquatiques. Pour améliorer leur confort, je recommande de vérifier régulièrement la qualité de l''eau et d''optimiser les zones d''alimentation pour soutenir leur nutrition et leur comportement naturel.');
 
 -- Insérer les animaux
@@ -82,6 +82,7 @@ INSERT INTO detient (habitat_id, animal_id) VALUES
 (2, 4), -- Bamboo dans la Jungle
 (3, 5); -- Croco dans le Marais
 
+-- Insérer la nourriture
 INSERT INTO nourriture (label) VALUES
 ('Viande'),
 ('Fruits'),
@@ -89,15 +90,20 @@ INSERT INTO nourriture (label) VALUES
 ('Feuilles de bambou'),
 ('Insectes');
 
+-- Insérer les consommations de nourriture
 INSERT INTO consommation (animal_id, nourriture_id, date, heure, quantite) VALUES
 (1, 1, '2024-07-10', '08:00:00', 5.5), -- Leo mange 5.5 kg de viande
 (2, 1, '2024-07-10', '09:00:00', 4.0), -- Tigrou mange 4 kg de viande
 (3, 2, '2024-07-10', '10:00:00', 1.5), -- Paco mange 1.5 kg de fruits
 (4, 4, '2024-07-10', '11:00:00', 3.0), -- Bamboo mange 3 kg de feuilles de bambou
 (5, 3, '2024-07-10', '12:00:00', 2.5), -- Croco mange 2.5 kg de poisson
-
 (1, 1, '2024-07-11', '08:00:00', 6.0), -- Leo mange 6 kg de viande
 (2, 1, '2024-07-11', '09:00:00', 4.2), -- Tigrou mange 4.2 kg de viande
 (3, 2, '2024-07-11', '10:00:00', 1.8), -- Paco mange 1.8 kg de fruits
 (4, 4, '2024-07-11', '11:00:00', 3.2), -- Bamboo mange 3.2 kg de feuilles de bambou
 (5, 3, '2024-07-11', '12:00:00', 2.7); -- Croco mange 2.7 kg de poisson
+
+-- Insérer les horaires
+INSERT INTO horaires (jour_semaine, heure_debut, heure_fin) VALUES
+('Lundi - Vendredi', '09:00:00', '17:00:00'),
+('Samedi - Dimanche', '10:00:00', '18:00:00');

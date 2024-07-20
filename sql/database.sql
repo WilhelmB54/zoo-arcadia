@@ -116,3 +116,10 @@ CREATE TABLE consommation (
     FOREIGN KEY (animal_id) REFERENCES animal(animal_id),
     FOREIGN KEY (nourriture_id) REFERENCES nourriture(nourriture_id)
 );
+
+CREATE TABLE horaires (
+    id SERIAL PRIMARY KEY,
+    jour_semaine VARCHAR(20) NOT NULL,
+    heure_debut TIME NOT NULL,
+    heure_fin TIME NOT NULL
+);

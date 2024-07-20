@@ -2,34 +2,62 @@
 // Inclusion du fichier de connexion à la base de données
 require_once 'connexion_bdd.php';
 
-// Vérification si le formulaire a été soumis
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// Initialisation des variables
+$success = 0;
+$action = '';
+
+// Vérifier si la requête est une requête POST
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupération des données du formulaire
-    $habitat_id = $_POST['habitat_id_commentaire'];
-    $commentaire_habitat = $_POST['commentaire_habitat'];
+    $animal_id_rapport = isset($_POST['animal_id_rapport']) ? trim($_POST['animal_id_rapport']) : '';
+    $date_rapport = isset($_POST['date_rapport']) ? trim($_POST['date_rapport']) : '';
+    $detail_rapport = isset($_POST['detail_rapport']) ? trim($_POST['detail_rapport']) : '';
 
-    // Préparation de la requête SQL pour mettre à jour le commentaire de l'habitat
-    $sql = "UPDATE habitat SET commentaire_habitat = :commentaire_habitat WHERE habitat_id = :habitat_id";
-    
-    // Préparation de la requête
-    $stmt = $pdo->prepare($sql);
+    // Validation des données
+    if (empty($animal_id_rapport) || empty($date_rapport) || empty($detail_rapport)) {
+        $message = 'Tous les champs sont requis.';
+    } elseif (!is_numeric($animal_id_rapport)) {
+        $message = 'L\'ID de l\'animal doit être un nombre.';
+    } else {
+        // Préparation de la requête SQL pour insérer le rapport dans la base de données
+        $sql = "INSERT INTO rapport_veterinaire (date, detail) VALUES (:date_rapport, :detail_rapport)";
 
-    // Liaison des paramètres
-    $stmt->bindParam(':habitat_id', $habitat_id, PDO::PARAM_INT);
-    $stmt->bindParam(':commentaire_habitat', $commentaire_habitat, PDO::PARAM_STR);
+        try {
+            // Préparation de la requête
+            $stmt = $pdo->prepare($sql);
 
-    // Exécution de la requête
-    try {
-        $stmt->execute();
-        // Redirection avec un message de succès
-        header("Location: veterinaire_dashboard.php?message=success&action=Modifier");
-        exit();
-    } catch (PDOException $e) {
-        // Gestion des erreurs SQL
-        die("Erreur lors de la modification du commentaire sur l'habitat : " . $e->getMessage());
+            // Liaison des paramètres
+            $stmt->bindParam(':date_rapport', $date_rapport);
+            $stmt->bindParam(':detail_rapport', $detail_rapport);
+
+            // Exécution de la requête
+            $stmt->execute();
+
+            // Récupération de l'ID du rapport inséré
+            $rapport_veterinaire_id = $pdo->lastInsertId();
+
+            // Insertion dans la table obtient pour associer le rapport à l'animal
+            $sql_obtient = "INSERT INTO obtient (rapport_veterinaire_id, animal_id) VALUES (:rapport_veterinaire_id, :animal_id)";
+
+            // Préparation de la requête
+            $stmt_obtient = $pdo->prepare($sql_obtient);
+
+            // Liaison des paramètres
+            $stmt_obtient->bindParam(':rapport_veterinaire_id', $rapport_veterinaire_id, PDO::PARAM_INT);
+            $stmt_obtient->bindParam(':animal_id', $animal_id_rapport, PDO::PARAM_INT);
+
+            // Exécution de la requête
+            $stmt_obtient->execute();
+
+            // Message de succès
+            $success = 1;
+            $action = 'Ajouter';
+        } catch (PDOException $e) {
+            $message = 'Erreur lors de l\'insertion du rapport : ' . $e->getMessage();
+        }
     }
-} else {
-    // Redirection si le formulaire n'est pas soumis correctement
-    header("Location: veterinaire_dashboard.php");
+
+    // Redirection vers la page de tableau de bord avec les paramètres appropriés
+    header('Location: veterinaire_dashboard.php?success=' . $success . '&action=' . $action . (isset($message) ? '&message=' . urlencode($message) : ''));
     exit();
 }

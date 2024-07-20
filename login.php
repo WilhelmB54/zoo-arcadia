@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Rediriger l'utilisateur vers la page appropriée
             switch ($role) {
                 case 'admin':
-                    header("Location: dashboards/admin_dashboard.php");
+                    header("Location: admin/admin_dashboard.php");
                     break;
                 case 'veterinaire':
                     header("Location: veterinaire/veterinaire_dashboard.php");

@@ -31,8 +31,8 @@ try {
                 <li><a href="index.php" class="nav-item active">Accueil</a></li>
                 <li><a href="services.php" class="nav-item">Services</a></li>
                 <li><a href="habitats.php" class="nav-item">Habitats</a></li>
-                <li><a href="connexion.html" class="nav-item">Connexion</a></li>
-                <li><a href="contact.html" class="nav-item">Contact</a></li>
+                <li><a href="connexion.php" class="nav-item">Connexion</a></li>
+                <li><a href="contact.php" class="nav-item">Contact</a></li>
             </ul>
         </nav>
         <div class="banner-content">
@@ -49,17 +49,17 @@ try {
         <div class="habitats-container">
             <div class="habitat">
                 <img src="images/habitats/savane.jpg" alt="Habitat Savane" />
-                <h3><a href="habitats.html#savane" class="habitat-link">Savane</a></h3>
+                <h3><a href="habitats.php#savane" class="habitat-link">Savane</a></h3>
                 <p>La savane du Zoo Arcadia abrite une variété d'animaux africains, tels que les lions, les girafes et les éléphants.</p>
             </div>
             <div class="habitat">
                 <img src="images/habitats/jungle.jpg" alt="Habitat Jungle" />
-                <h3><a href="habitats.html#jungle" class="habitat-link">Jungle</a></h3>
+                <h3><a href="habitats.php#jungle" class="habitat-link">Jungle</a></h3>
                 <p>La jungle est une zone dense et luxuriante où vivent des animaux tropicaux comme les singes, les perroquets et les reptiles.</p>
             </div>
             <div class="habitat">
                 <img src="images/habitats/marais.jpg" alt="Habitat Marais" />
-                <h3><a href="habitats.html#marais" class="habitat-link">Marais</a></h3>
+                <h3><a href="habitats.php#marais" class="habitat-link">Marais</a></h3>
                 <p>Le marais est un écosystème humide qui accueille des espèces adaptées à l'eau, comme les crocodiles, les hérons et les tortues.</p>
             </div>
         </div>
@@ -131,9 +131,32 @@ try {
         <p class="horaires">
             Horaires d'ouverture :
             <br />
-            Lundi - Vendredi : 9h00 - 17h00 | Samedi - Dimanche : 10h00 - 18h00
+            <?php
+            // Code PHP pour récupérer et afficher les horaires
+            include 'connexion_bdd.php';
+
+            // Requête pour récupérer tous les horaires avec un ordre personnalisé des jours de la semaine
+            $stmt = $pdo->query("
+                SELECT 
+                    jour_semaine, 
+                    TO_CHAR(heure_debut, 'HH24:MI') AS heure_debut, -- Formatage de l'heure et des minutes (hh:mm)
+                    TO_CHAR(heure_fin, 'HH24:MI') AS heure_fin     -- Formatage de l'heure et des minutes (hh:mm)
+                FROM horaires 
+                ORDER BY 
+                    CASE 
+                        WHEN jour_semaine = 'Lundi - Vendredi' THEN 1 
+                        WHEN jour_semaine = 'Samedi - Dimanche' THEN 2 
+                        ELSE 3 -- Pour gérer d'autres jours si nécessaire
+                    END
+            ");
+
+            // Affichage des horaires
+            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                echo '<p>' . $row['jour_semaine'] . ' : ' . $row['heure_debut'] . ' - ' . $row['heure_fin'] . '</p>';
+            }
+            ?>
         </p>
-        <p class="copyright">&copy; 2024 Zoo Arcadia. Tous droits réservés.</p>
+        <p class="copyright">&copy; <?php echo date('Y'); ?> Zoo Arcadia. Tous droits réservés.</p>
     </footer>
-</body>
+  </body>
 </html>
