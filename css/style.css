@@ -1,0 +1,157 @@
+/* Styles généraux */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #4caf50;
+  color: #fff;
+  text-align: center;
+}
+
+/* En-tête et navigation */
+.banner-header {
+  background-image: url("../images/banniere.jpg");
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+nav {
+  display: flex;
+  justify-content: center; /* Centre les éléments à l'intérieur de la barre de navigation */
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap; /* Permet de passer sur plusieurs lignes si nécessaire */
+  border-radius: 100px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Permet de passer sur plusieurs lignes si nécessaire */
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0.5rem;
+}
+
+nav ul li a {
+  color: #ffeb3b; /* Couleur des liens en jaune */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  transition: color 0.3s; /* Transition seulement sur la couleur du texte */
+}
+
+nav ul li a:hover {
+  color: white; /* Couleur blanche au survol */
+}
+
+.nav-item.active {
+  font-weight: bold; /* Lien actif en gras */
+  text-decoration: underline; /* Lien actif souligné */
+}
+
+/* Styles pour le contenu de la bannière */
+.banner-content {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Couleur de fond semi-transparente pour améliorer la lisibilité du texte */
+  border-radius: 50%;
+}
+
+.banner-content h1 {
+  margin: 0;
+  font-size: 3rem;
+  color: #ffeb3b; /* Titre en jaune */
+}
+
+.banner-content p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+/* Styles pour le lien du titre dans l'en-tête */
+header h1 a {
+  color: #ffeb3b; /* Couleur jaune pour le lien du titre */
+  text-decoration: none;
+}
+
+header h1 a:hover {
+  text-decoration: underline;
+}
+
+/* Styles pour le pied de page */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Styles pour les horaires d'ouverture */
+.horaires {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Styles pour le copyright */
+.copyright {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .banner-content p {
+    font-size: 1.2rem;
+  }
+
+  nav ul li {
+    margin: 0.2rem;
+  }
+
+  .habitat {
+    flex: 0 0 calc(50% - 1rem); /* Chaque habitat occupe 1/2 de la largeur moins un espacement */
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-content h1 {
+    font-size: 2rem;
+  }
+
+  .banner-content p {
+    font-size: 1rem;
+  }
+
+  .habitat {
+    flex: 0 0 calc(100% - 1rem); /* Chaque habitat occupe 100% de la largeur moins un espacement */
+  }
+}

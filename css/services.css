@@ -1,0 +1,58 @@
+/* Styles pour la section Services */
+#services {
+  padding: 2rem;
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+}
+
+#services h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #ffeb3b; /* Titres en jaune */
+}
+
+/* Styles pour chaque carte de service */
+.service-item {
+  padding: 30px;
+  margin: 0 auto; /* Centre les cartes horizontalement */
+  max-width: 800px; /* Ajustez la largeur maximale selon votre besoin */
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  padding: 20px; /* Espacement interne pour augmenter l'espacement global */
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #4caf50; /* Noms des animaux et services en vert */
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px; /* Espacement après chaque titre */
+}
+
+.service-description {
+  font-size: 1rem;
+  color: black;
+  margin-bottom: 15px; /* Espacement après chaque description */
+}
+
+@media (max-width: 768px) {
+  .service-item {
+    width: 100%;
+    padding: 10px; /* Ajustement du padding pour les petits écrans */
+  }
+}

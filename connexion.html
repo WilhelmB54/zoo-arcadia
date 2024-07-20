@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page connexion - Zoo Arcadia</title>
+    <!-- Lien vers le fichier CSS externe -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/connexion.css" />
+    <!-- Ajout d'un lien pour les icônes -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- En-tête de la page avec la barre de navigation -->
+    <header class="banner-header">
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.php" class="nav-item">Accueil</a></li>
+          <li><a href="services.php" class="nav-item">Services</a></li>
+          <li><a href="habitats.php" class="nav-item">Habitats</a></li>
+          <li>
+            <a href="connexion.html" class="nav-item active">Connexion</a>
+          </li>
+          <li><a href="contact.html" class="nav-item">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="banner-content">
+        <h1><a href="index.php">Bienvenue au Zoo Arcadia</a></h1>
+        <p>
+          Explorez notre zoo, découvrez nos habitats et nos merveilleux animaux.
+        </p>
+      </div>
+    </header>
+
+    <div class="container">
+      <h2>Connexion</h2>
+      <form action="login.php" method="post">
+        <label for="username">Courriel (Username) :</label>
+        <input type="email" id="username" name="username" required />
+
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required />
+
+        <input type="submit" value="Se connecter" />
+      </form>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+      <p class="horaires">
+        Horaires d'ouverture :
+        <br />
+        Lundi - Vendredi : 9h00 - 17h00 | Samedi - Dimanche : 10h00 - 18h00
+      </p>
+      <p class="copyright">&copy; 2024 Zoo Arcadia. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

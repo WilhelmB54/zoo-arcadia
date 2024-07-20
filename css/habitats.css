@@ -1,0 +1,94 @@
+/* Styles pour les sections */
+section {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  color: black; /* Texte en noir pour contraste */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+section h2 {
+  margin-top: 0;
+  font-size: 2rem;
+  color: #ffeb3b; /* Titres en jaune */
+}
+
+/* Styles pour les cartes des habitats */
+.card {
+  display: inline-block; /* Affichage en ligne pour les cartes */
+  vertical-align: top; /* Alignement vertical en haut */
+  width: calc(
+    33.33% - 2rem
+  ); /* Largeur pour affichage côte à côte avec espacement */
+  margin: 1rem;
+  box-sizing: border-box; /* Inclure les marges et les bordures dans la largeur */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background-color: #f4f4f4;
+  color: #4caf50;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+  width: 100%; /* Image remplissant la carte */
+  height: auto;
+  border-radius: 10px;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Effet de mise à l'échelle au survol */
+}
+
+/* Styles pour les cartes des animaux */
+.animal-card {
+  display: inline-block; /* Affichage en ligne pour les cartes d'animaux */
+  vertical-align: top; /* Alignement vertical en haut */
+  width: calc(
+    50% - 2rem
+  ); /* Largeur réduite pour affichage côte à côte avec espacement */
+  margin: 1rem;
+  box-sizing: border-box; /* Inclure les marges et les bordures dans la largeur */
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  background-color: #f4f4f4;
+  color: #000;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.animal-card img {
+  width: 100%; /* Image remplissant la carte */
+  height: auto;
+  border-radius: 25px;
+}
+
+.animal-card:hover {
+  transform: scale(1.05); /* Effet de mise à l'échelle au survol */
+}
+
+/* Style pour le prénom des animaux en vert */
+.animal-name {
+  color: green; /* Couleur verte pour le prénom des animaux */
+}
+
+.rounded-image {
+  display: block; /* Assure que l'image se comporte comme un élément block */
+  border-radius: 50%; /* Rend l'image circulaire */
+  border: 3px solid black; /* Ajoute une bordure noire de 3px */
+  max-width: 100%; /* Limite la largeur maximale de l'image à 100% du conteneur */
+  height: auto; /* Maintient le ratio d'aspect */
+  margin: 0 auto; /* Centre l'image horizontalement en utilisant la marge automatique */
+}
+
+/* Augmentation de l'espace entre les éléments */
+.images-container {
+  margin-bottom: 50px; /* Espace en bas de la section d'images de l'habitat */
+}
+
+#habitatDetails .animal-card {
+  margin-top: 40px; /* Espace au-dessus de chaque carte d'animal */
+}
